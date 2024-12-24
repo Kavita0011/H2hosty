@@ -15,13 +15,17 @@ exit;
 function custom_form_activation(){
   global $wpdb,$table_prefix;
     // echo "plugin-activate";
-    $wp_table=$table_prefix."my_custom_user";
-    $query="CREATE TABLE IF NOT EXISTS `$wp_table` (`Id` INT NOT NULL AUTO_INCREMENT , `Name` VARCHAR NOT NULL , `Email` VARCHAR NOT NULL , `Password` TEXT NOT NULL , PRIMARY KEY (`Id`)) ENGINE = MyISAM;";
+    $wp_table=$table_prefix .'custom_user';
+    $query="CREATE TABLE `$wp_table` (`Id` INT(11) NOT NULL AUTO_INCREMENT , `Name` VARCHAR(255) NOT NULL , `Email` VARCHAR(255) NOT NULL , `Password` VARCHAR(30) NOT NULL , PRIMARY KEY (`Id`)) ENGINE = InnoDB;";
     $wpdb->query($query);
 }
 
 function custom_form_deactivation(){
-    echo "plugin deactviate";
+  global $wpdb,$table_prefix;
+  $wp_table=$table_prefix .'custom_user';
+  $query="TRUNCATE `$wp_table`;";
+  $wpdb->query($query);
+  // echo "plugin deactviate";
 }
 register_activation_hook( __FILE__, "custom_form_activation" );
 register_deactivation_hook( __FILE__, "custom_form_deactivation" );
