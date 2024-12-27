@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term Insurance - Replica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+
+        <div class="header">
+            <div class="logo"><a href="#"><img src="assets/logo.png"></a></div>
+        <nav class="nav1">
+         <a href="#Calculator">Calculator</a>
+                <a href="#Term-Insurance">Term Insurance</a>
+                <a href="#Why-Buy-Term-Plan-Online">Why Buy Term Plan Online</a>
+                <a href="#Types-of-Term-Plans">Types of Term Plans</a>
+                <a href="#Benefits">Benefits</a>
+               
+        </nav> 
+        <span>
+        Track & Policy Download
+        <button class="btn">login</button>
+        </span>
+         </div>
+      
+            <nav class="nav">
+                <a href="#Calculator">Calculator</a>
+                <a href="#Term-Insurance">Term Insurance</a>
+                <a href="#Why-Buy-Term-Plan-Online">Why Buy Term Plan Online</a>
+                <a href="#Types-of-Term-Plans">Types of Term Plans</a>
+                <a href="#Benefits">Benefits</a>
+                <a href="#How-to-Buy">How to Buy</a>
+                <a href="#Companies">Companies</a>
+                <a href="#Who-Should-Buy">Who Should Buy</a>
+                <a href="#Riders">Riders</a>
+                <a href="#Right-Time-To-Buy">Right Time To Buy</a>
+                <a href="#How-to-Choose">How to Choose</a>
+                <a href="#Documents">Documents</a>
+                <a href="#FAQs">FAQs</a>
+            </nav>
+
+    </header>
+
+    <section id="Calculator" class="calculator">
+        <div class="container">
+           <div class="container">
+           <div>
+            <h1>Secure Your Family's Future with Term Insurance</h1>
+            <p>Compare and choose the best term insurance plans for you and your loved ones.</p>
+            </div>
+            <form id="insurance-form" class="form">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" placeholder="Enter your age" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn">Get Free Quote</button>
+            </form>
+        </div> <!-- Add calculator functionality if needed -->
+        </div>
+    </section>
+<div class="clear"></div>
+    <section id="Term-Insurance" class="term-insurance">
+        <div class="container">
+            <h2>What is Term Insurance?</h2>
+            <p>Term insurance provides financial protection for your family in case of an unfortunate event. It is the simplest form of life insurance.</p>
+        </div>
+    </section>
+
+    <section id="Why-Buy-Term-Plan-Online" class="why-buy">
+        <div class="container">
+            <h2>Why Buy Term Plan Online?</h2>
+            <p>Buying term insurance online is convenient, faster, and often more affordable compared to purchasing through agents.</p>
+        </div>
+    </section>
+
+    <section id="Types-of-Term-Plans" class="types-plans">
+        <div class="container">
+            <h2>Types of Term Plans</h2>
+            <p>Explore different types of term insurance plans available in the market.</p>
+        </div>
+    </section>
+
+    <section id="Benefits" class="benefits">
+        <div class="container">
+            <h2>Benefits of Term Insurance</h2>
+            <ul>
+                <li>Affordable premiums</li>
+                <li>Provides financial security to your family</li>
+                <li>Flexible coverage options</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="How-to-Buy" class="how-to-buy">
+        <div class="container">
+            <h2>How to Buy Term Insurance</h2>
+            <p>Learn how to purchase the best term insurance policy based on your needs.</p>
+        </div>
+    </section>
+
+    <section id="Companies" class="companies">
+        <div class="container">
+            <h2>Top Insurance Companies</h2>
+            <p>Here are the top companies offering term insurance plans.</p>
+        </div>
+    </section>
+
+    <section id="Who-Should-Buy" class="who-should-buy">
+        <div class="container">
+            <h2>Who Should Buy Term Insurance?</h2>
+            <p>Term insurance is suitable for anyone who wants to protect their family financially in case of an unexpected event.</p>
+        </div>
+    </section>
+
+    <section id="Riders" class="riders">
+        <div class="container">
+            <h2>Insurance Riders</h2>
+            <p>Understand the different riders you can add to your term insurance policy for enhanced coverage.</p>
+        </div>
+    </section>
+
+    <section id="Right-Time-To-Buy" class="right-time">
+        <div class="container">
+            <h2>Right Time to Buy Term Insurance</h2>
+            <p>Learn about the best time to buy term insurance to get the maximum benefits.</p>
+        </div>
+    </section>
+
+    <section id="How-to-Choose" class="how-to-choose">
+        <div class="container">
+            <h2>How to Choose the Right Term Plan?</h2>
+            <p>Choosing the right plan involves evaluating your financial needs and family requirements.</p>
+        </div>
+    </section>
+
+    <section id="Documents" class="documents">
+        <div class="container">
+            <h2>Documents Required</h2>
+            <p>Find out what documents are needed to apply for term insurance.</p>
+        </div>
+    </section>
+
+    <section id="FAQs" class="faqs">
+        <div class="container">
+        <h1>FAQs About Term Insurance Policy</h1>
+        <div class="tabs">
+            <a class="tab-btn active" onclick="showTab('tab1')">General</a>
+            <button class="tab-btn" onclick="showTab('tab2')">Plans</button>
+            <button class="tab-btn" onclick="showTab('tab3')">Premium Calculator</button>
+            <button class="tab-btn" onclick="showTab('tab4')">Rider</button>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+                  <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+               <button class="btn-round">1</button> What are the key features of a term insurance plan?
+                <span class="arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+<h4>          Following are the key features of a term insurance plan -  
+</h4>
+            
+            
+           <ul>
+            <li>Budget Friendliness</li>
+            <li>Long-term life protection</li>
+            <li>Availability of riders</li>
+            <li>Easy to Purchase</li>
+            <li>Availability of whole life protection</li>
+            </ul>
+            
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                <button class="btn-round">2</button>Why should I buy term insurance online?
+                <span class="arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+                <p>Buying term insurance online is cost-effective, faster, and allows easy comparison of various plans.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+               <button class="btn-round">2</button> Are riders necessary for term insurance?
+                <span class="arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+                <p>Riders are optional add-ons that enhance your policy coverage. They are not mandatory but can be beneficial.</p>
+            </div>
+        </div></div>
+            <div class="tab-pane" id="tab2">
+                <h3>Feature 2</h3>
+                <p>This is the content for Feature 2. Learn more about what makes this feature unique.</p>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <h3>Feature 3</h3>
+                <p>This is the content for Feature 3. Discover how this feature adds value to your experience.</p>
+            </div>
+        </div>
+    </div>     <!-- Add FAQ content here -->
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Secure Your Family's Future with Term Insurance</h1>
+            <p>Compare and choose the best term insurance plans for you and your loved ones.</p>
+            <form id="insurance-form" class="form">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" placeholder="Enter your age" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn">Get Free Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="plans">
+        <div class="container">
+            <h2>Top Term Insurance Plans</h2>
+            <div class="plan-list">
+                <div class="plan-card">
+                    <h3>Plan A</h3>
+                    <p>Premium: ₹500/month</p>
+                    <p>Coverage: ₹1 Crore</p>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan B</h3>
+                    <p>Premium: ₹750/month</p>
+                    <p>Coverage: ₹1.5 Crore</p>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan C</h3>
+                    <p>Premium: ₹1000/month</p>
+                    <p>Coverage: ₹2 Crore</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-row">
+
+            <div class="footer1">
+        <div>
+        <a href="#"><img class="logo" src="assets/logo.png" alt=""></a>
+        </div>
+        <div><i class="">icon1</i>
+        <i class="">icon1</i>
+        <i class="">icon1</i>
+        <i class="">icon1</i>
+        <i class="">icon1</i>
+        </div>
+        <div>
+        <p>Email : support@insurancedekho.com</p>
+        <p>Call : 755 1196 989</p>
+        </div>
+        </div>
+        <div class="footer1">
+        <h5>Products</h5>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        </div>
+        <div class="footer1">
+        <h5>Products</h5>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        </div>
+        <div class="footer1">
+         <h5>Products</h5>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        </div>
+        <div class="footer1">
+        <div class="icon-card">
+        <i>icon1</i>
+        <div>
+        <h4>80 Lacs+</h4>
+        <p>Happy Smiles</p>
+        </div></div>
+        <div class="icon-card">
+        <i>icon1</i>
+        <div>
+        <h4>80 Lacs+</h4>
+        <p>Happy Smiles</p>
+        </div></div>
+        <div class="icon-card">
+        <i>icon1</i><div>
+        <h4>80 Lacs+</h4>
+        <p>Happy Smiles</p>
+        </div></div>
+        </div>
+        </div>
+       <div class="footer-row">
+
+         <div class="footer1">
+        <h5>Products</h5>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        </div>
+        <div class="footer1">
+        <h5>Products</h5>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        </div>
+        <div class="footer1">
+        <h5>Products</h5>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        </div>
+        <div class="footer1">
+         <h5>Products</h5>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        <p><a href="#">Car Insurance</a>
+        </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Girnar Insurance Brokers Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

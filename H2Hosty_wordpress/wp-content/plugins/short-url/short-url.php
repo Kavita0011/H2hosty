@@ -21,25 +21,25 @@ function plugin_activate() {
     $shorturl_tracking_table = $table_prefix . 'shorturl_tracking';
 
     // Query to create the 'shorturl_tracking' table
-    $query1 = "CREATE TABLE IF NOT EXISTS `$shorturl_tracking_table` (
-        `Id` INT(11) NOT NULL AUTO_INCREMENT,
-        `ip` VARCHAR(100) NOT NULL,
-        `country` VARCHAR(100) NOT NULL,
-        `referral` TEXT,
-        `user_agent` TEXT,
-        `created` DATETIME DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY (`Id`)
+    $query1 = "CREATE TABLE IF NOT EXISTS `$shorturls_table` (
+        id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        linkalias VARCHAR(8) NOT NULL UNIQUE,
+        longurl TEXT NOT NULL,
+        shorturl TEXT NOT NULL,
+        clicks INT(11) DEFAULT 0,
+        status TINYINT(1) DEFAULT 1,
+        created DATETIME DEFAULT CURRENT_TIMESTAMP
     );";
 
     // Query to create the 'shorturls' table
-    $query2 = "CREATE TABLE IF NOT EXISTS `$shorturls_table` (
-        `Id` INT(11) NOT NULL AUTO_INCREMENT,
-        `linkalies` VARCHAR(8) NOT NULL UNIQUE,
-        `longurl` TEXT NOT NULL,
-        `clicks` INT(11) DEFAULT 0,
-        `status` INT(1) DEFAULT 1,
-        `created` DATETIME DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY (`Id`)
+    $query2 = "CREATE TABLE IF NOT EXISTS `$shorturl_tracking_table` (
+        id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        link_id BIGINT(20) UNSIGNED NOT NULL,
+        ip VARCHAR(45) NOT NULL,
+        country VARCHAR(100),
+        referral TEXT,
+        user_agent TEXT,
+        created DATETIME DEFAULT CURRENT_TIMESTAMP
     );";
 
     // Execute the queries to create the tables
@@ -66,20 +66,62 @@ function plugin_deactivate() {
 // Register activation and deactivation hooks
 register_activation_hook( __FILE__, 'plugin_activate' );
 register_deactivation_hook( __FILE__, 'plugin_deactivate' );
-function add_menu(){
-add_menu_page(
-    "Short-url-page",
-    "short-url",
-    "manage_options",
-    "shortUrl",
-    "short_url"
-);
+
+// Hook into admin menu to add submenu
+add_action('admin_menu', 'create_short_url_menu');
+
+function create_short_url_menu() {
+    // Top-level menu
+    add_menu_page(
+        'Short URL',             
+        'Short URL',             
+        'manage_options',        
+        'short-url-dashboard',    
+        'short_url_dashboard_page',
+        'dashicons-admin-links',  
+        6                         
+    );
+
+    // Sub-menu: Dashboard
+    add_submenu_page(
+        'short-url-dashboard', 
+        'Dashboard',            
+        'Dashboard',            
+        'manage_options',       
+        'short-url-dashboard',   
+        'short_url_dashboard_page' 
+        );
+
+    // Sub-menu: Tracking
+    add_submenu_page(
+        'short-url-dashboard',    
+        'Tracking',                
+        'Tracking',
+        'manage_options',        
+        'short-url-tracking',     
+        'short_url_tracking_page'  
+    );
 }
+
+// Callback function for Dashboard page
+function short_url_dashboard_page() {
+    include "content.php";
+    echo '</div>';
+}
+
+// Callback function for Tracking page
+function short_url_tracking_page() {
+    echo '<div class="wrap"><h1>Short URL Tracking</h1>';
+    echo '<p>Here you can view the tracking data for your shortened URLs.</p>';
+    // Add tracking details or functionality here
+    echo '</div>';
+}
+
 function show_data() {
     global $wpdb, $table_prefix;
 
     // Define the table name
-    $table_name = $table_prefix . 'custom_user';
+    $table_name = $table_prefix . 'shorturls';
 
     // Set pagination variables
     $rows_per_page = 10; // Number of rows per page
@@ -97,26 +139,33 @@ function show_data() {
     // Start output buffering
     ob_start();
     ?>
-    <h1>Submitted Data</h1>
+    <h1>Shorten urls</h1>
     <?php if (!empty($results)) { ?>
-        <table border="1" cellpadding="5" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($results as $row) { ?>
-                    <tr>
-                        <td><?php echo esc_html($row->Id); ?></td>
-                        <td><?php echo esc_html($row->Name); ?></td>
-                        <td><?php echo esc_html($row->Email); ?></td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+       <?php echo '<table class="" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Alias</th>
+                <th>Short URL</th>
+                <th>Long URL</th>
+                <th>Clicks</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>';
+
+    foreach ($results as $url) {
+        echo '<tr>
+            <td>' . esc_html($url->id) . '</td>
+            <td>' . esc_html($url->linkalias) . '</td>
+            <td>' . site_url('/' . esc_html($url->linkalias)) . '</td>
+            <td>' . esc_html($url->longurl) . '</td>
+            <td>' . esc_html($url->clicks) . '</td>
+            <td>' . ($url->status ? 'Active' : 'Inactive') . '</td>
+        </tr>';
+    }
+
+    echo '</tbody></table> ';?>
         <p>Total entries: <?php echo esc_html($total_entries); ?></p>
 
         <?php
@@ -139,12 +188,10 @@ function show_data() {
     <?php
     return ob_get_clean();
 }
-add_shortcode('show_data', 'show_data_shortcode');
-function short_url(){
 
-    include "content.php";
-    
-    echo show_data();
+
+
+function short_url(){
+    include "content.php";    
 }
-add_action("admin_menu","add_menu");
 ?>
