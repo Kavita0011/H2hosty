@@ -19,6 +19,15 @@ window.addEventListener("scroll", function() {
         navbar.classList.remove("visible");
     }
 });
+
+   // Toggle active state for income range
+   const incomeOptions = document.querySelectorAll('.income .option');
+   incomeOptions.forEach(option => {
+     option.addEventListener('click', () => {
+       incomeOptions.forEach(opt => opt.classList.remove('active'));
+       option.classList.add('active');
+     });
+   });
 // Function to switch between tabs
 function showTab(tabId) {
     // Hide all tab content

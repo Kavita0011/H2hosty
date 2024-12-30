@@ -38,7 +38,7 @@ header{
 .nav1{
 padding-top:10px;
 }
-.nav a,.nav1 a{
+.nav a,a,.nav1 a{
     padding:10px;
     color: gray;
     text-decoration: none;
@@ -288,3 +288,181 @@ justify-content: space-between;
     text-align: center;
     padding: 20px 0;
 }
+
+/* hero-section starts */
+.form-container {
+    float: right;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 420px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container .discount-banner {
+    background: #e0f5e4;
+    color: #3b873b;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .form-container .gender {
+    display: flex;
+    justify-content: left;
+    gap: 30%;
+    margin-bottom: 15px;
+  }
+
+  .form-container .gender label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .form-container .gender input {
+    accent-color: #007bff;
+  }
+
+  .form-container input[type="text"],
+  .form-container input[type="date"],
+  .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  .form-container .toggle {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .form-container .toggle label {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container .toggle input {
+    display: none;
+  }
+
+  .form-container .toggle input:checked + label {
+    background: #e0f5e4;
+    color: #3b873b;
+    border-color: #3b873b;
+  }
+.smoker{
+    text-align: center;
+display: flex;
+   
+}
+.smoker .btn{
+    width: 50%;
+    color: black;
+    background-color:#ffff;
+    padding:10px 20px 10px 20px;
+    border: 1px solid rgb(206, 206, 249);
+}
+  .form-container .income{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .form-container .income div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 0px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .form-container .income div.active {
+    background: #d9e5f0;
+    color: #fff;
+    border-color: #aacef4;
+  }
+
+  .form-container .submit-button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6b6b;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .form-container .submit-button:hover {
+    background: #ff3d3d;
+  }
+  .arrow {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes arrow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .form-container .disclaimer {
+    font-size: 12px;
+    color: #777;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .form-container .disclaimer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .form-container .whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .form-container .whatsapp input {
+    margin: 0;
+  }
+
+  .form-container .whatsapp label {
+    font-size: 14px;
+    color: #333;
+  }
+  /* hero-section ends */
+  /* term insurance section start */
+  .quick-links,.icons{
+    justify-content: space-evenly;
+    display: flex;
+  }
+  
