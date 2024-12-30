@@ -465,4 +465,22 @@ display: flex;
     justify-content: space-evenly;
     display: flex;
   }
+  .quick-links-wrapper{
+    padding:20px;
+    border-radius: 20px;
+    background-color: #c0d6f2;
+  }
+  .view-less,.more-content{
+    
+    display: none;
+  }
+  .view-less,.view-more{
+    text-align: right;
+    padding: 10px 20px;
+    background-color: none;
+}
+.term-insurance .content{
+    
+}
+  
   

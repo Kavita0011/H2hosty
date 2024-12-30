@@ -80,3 +80,15 @@ function toggleFAQ(button) {
 document.addEventListener('DOMContentLoaded', () => {
     showTab('insurance');
 });
+const viewMoreBtn = document.querySelector(".view-more");
+const moreContent = document.querySelector(".more-content");
+
+viewMoreBtn.addEventListener("click", function() {
+    if (moreContent.style.display === "none" || moreContent.style.display === "") {
+        moreContent.style.display = "block";
+        viewMoreBtn.textContent = "View Less"; // Change button text
+    } else {
+        moreContent.style.display = "none";
+        viewMoreBtn.textContent = "View More"; // Reset button text
+    }
+});
